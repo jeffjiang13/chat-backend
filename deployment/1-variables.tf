@@ -49,13 +49,13 @@ variable "https_ssl_policy" {
 variable "main_api_server_domain" {
   description = "Main API Server Domain"
   type        = string
-  default     = "" # Your backend domain you created a route53 zone for
+  default     = "https://api.dev.chat-s2nz.onrender.com" # Your backend domain you created a route53 zone for
 }
 
 variable "dev_api_server_domain" {
   description = "Dev API Server Domain"
   type        = string
-  default     = "api.dev.<your-backend-domain>"
+  default     = "api.dev.chat-s2nz.onrender.com"
 }
 
 variable "ec2_iam_role_name" {
