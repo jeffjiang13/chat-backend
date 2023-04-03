@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "Region in which AWS resources are created"
   type        = string
-  default     = "" # Your AWS region
+  default     = "US East" # Your AWS region
 }
 
 variable "vpc_cidr_block" {
@@ -13,7 +13,7 @@ variable "vpc_cidr_block" {
 variable "vpc_availability_zones" {
   description = "VPC Availability Zones"
   type        = list(string)
-  default     = ["", ""] # Two availability zones for your specific region
+  default     = ["US East", "US East"] # Two availability zones for your specific region
 }
 
 variable "vpc_public_subnets" {
@@ -37,7 +37,7 @@ variable "global_destination_cidr_block" {
 variable "bastion_host_cidr" {
   description = "CIDR Block for Bastion Host Ingress"
   type        = string
-  default     = "" # Your <IP address>/32
+  default     = "47.230.192.120" # Your <IP address>/32
 }
 
 variable "https_ssl_policy" {
@@ -55,7 +55,7 @@ variable "main_api_server_domain" {
 variable "dev_api_server_domain" {
   description = "Dev API Server Domain"
   type        = string
-  default     = "api.dev.chat-s2nz.onrender.com"
+  default     = """
 }
 
 variable "ec2_iam_role_name" {
@@ -109,11 +109,11 @@ variable "code_deploy_role_name" {
 variable "prefix" {
   description = "Prefix to be added to AWS resources tags"
   type        = string
-  default     = "" # Add a unique identifier name
+  default     = "1" # Add a unique identifier name
 }
 
 variable "project" {
   description = "Prefix to be added to AWS resources local tags"
   type        = string
-  default     = "" # You can use the name unique identifier created above
+  default     = "1" # You can use the name unique identifier created above
 }
